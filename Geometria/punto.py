@@ -1,3 +1,5 @@
+import math
+
 class Punto:
     def __init__(self, x=0, y=0):
         self.x = x
@@ -24,4 +26,7 @@ class Punto:
         
     def calcular_vector(punto1, punto2):
         return (punto2.x - punto1.x, punto2.y - punto1.y)
+    
+    def calcular_distancia(punto1, punto2):
+        return math.sqrt((punto2.x - punto1.x)**2 + (punto2.y - punto1.y)**2)
     

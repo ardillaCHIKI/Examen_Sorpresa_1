@@ -1,4 +1,5 @@
 from punto import Punto
+import math
 
 class Rectangulo:
     def __init__(self, punto_inicial=None, punto_final=None):
