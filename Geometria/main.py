@@ -14,11 +14,13 @@ if __name__ == "__main__":
     print("Punto B:", B)
     print("Punto C:", C)
     print("Punto D:", D)
+    print()
 
     # Determinar cuadrantes
     print("Cuadrante de A:", Punto.determinar_cuadrante(A))
     print("Cuadrante de C:", Punto.determinar_cuadrante(C))
     print("Cuadrante de D:", Punto.determinar_cuadrante(D))
+    print()
 
     # Calcular vectores
     vector_AB = Punto.calcular_vector(A, B)
@@ -26,22 +28,23 @@ if __name__ == "__main__":
 
     print("Vector AB:", vector_AB)
     print("Vector BA:", vector_BA)
+    print()
 
     # Calcular distancias al origen
     print(f"Distancia entre A y B: {Punto.calcular_distancia(A, B):.2f}")
     print(f"Distancia entre B y A: {Punto.calcular_distancia(B, A):.2f}")
+    print()
 
     # Determinar el punto más lejano del origen
-    distancia_a = Punto.calcular_distancia(A, D)
-    distancia_b = Punto.calcular_distancia(B, D)
-    distancia_c = Punto.calcular_distancia(C, D)
+    distancias = {
+        "A": Punto.calcular_distancia(A, D),
+        "B": Punto.calcular_distancia(B, D),
+        "C": Punto.calcular_distancia(C, D)
+    }
 
-    if distancia_a > distancia_b and distancia_a > distancia_c:
-        print("El punto más lejano del origen es A")
-    elif distancia_b > distancia_a and distancia_b > distancia_c:
-        print("El punto más lejano del origen es B")
-    else:
-        print("El punto más lejano del origen es C")
+    punto_mas_lejano = max(distancias, key=distancias.get)
+    print(f"El punto más lejano del origen es {punto_mas_lejano}")
+    print()
 
     # Crear un rectángulo utilizando los puntos A y B
     rectangulo = Rectangulo(A, B)

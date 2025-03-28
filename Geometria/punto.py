@@ -10,19 +10,19 @@ class Punto:
     
     def determinar_cuadrante(punto):
         if punto.x > 0 and punto.y > 0:
-            return "Primer cuadrante"
+            return "Esta en el primer cuadrante"
         elif punto.x < 0 and punto.y > 0:
-            return "Segundo cuadrante"
+            return "Esta en el segundo cuadrante"
         elif punto.x < 0 and punto.y < 0:
-            return "Tercer cuadrante"
+            return "Esta en el tercer cuadrante"
         elif punto.x > 0 and punto.y < 0:
-            return "Cuarto cuadrante"
+            return "Esta en el cuarto cuadrante"
         elif punto.x == 0 and punto.y != 0:
-            return "Eje Y"
+            return "Esta en el Eje Y"
         elif punto.y == 0 and punto.x != 0:
-            return "Eje X"
+            return "Esta en el Eje X"
         else:
-            return "Origen"
+            return "Esta en el origen"
         
     def calcular_vector(punto1, punto2):
         return (punto2.x - punto1.x, punto2.y - punto1.y)
